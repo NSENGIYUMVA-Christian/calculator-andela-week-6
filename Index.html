@@ -3,55 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Calculator</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Calculator</h1>
-    </header>
-    <main>
-      <div class="calculator-container">
-        <!-- display box -->
-        <div class="display-box">
-          <div class="display-box-row1">r1</div>
-          <div class="display-box-row2">r2</div>
-        </div>
-        <!-- clear and delete buttons -->
-        <div class="clear-dlt-container">
-          <button class="clear-btn">CLEAR</button>
-          <button class="dlt-btn">DELETE</button>
-        </div>
-        <!-- Numbers and operators -->
-        <div class="numbers-container">
-          <div class="row-1">
-            <button class="valClick">7</button>
-            <button class="valClick">8</button>
-            <button class="valClick">9</button>
-            <button class="valClick">/</button>
-          </div>
-          <div class="row-2">
-            <button class="valClick">4</button>
-            <button class="valClick">5</button>
-            <button class="valClick">6</button>
-            <button class="valClick">*</button>
-          </div>
-          <div class="row-3">
-            <button class="valClick">1</button>
-            <button class="valClick">2</button>
-            <button class="valClick">3</button>
-            <button class="valClick">-</button>
-          </div>
-          <div class="row-4">
-            <button class="valClick">.</button>
-            <button class="valClick">0</button>
-            <button class="valClick">=</button>
-            <button class="valClick">+</button>
-          </div>
-        </div>
+    <div class="calculator-grid">
+      <div class="output">
+        <div data-previous-operand class="previous-operand"></div>
+        <div data-current-operand class="current-operand"></div>
       </div>
-    </main>
-
-    <script src="./main.js"></script>
+      <button data-all-clear class="span-two">clear</button>
+      <button data-delete>delete</button>
+      <button data-operation>÷</button>
+      <button data-number>1</button>
+      <button data-number>2</button>
+      <button data-number>3</button>
+      <button data-operation>*</button>
+      <button data-number>4</button>
+      <button data-number>5</button>
+      <button data-number>6</button>
+      <button data-operation>+</button>
+      <button data-number>7</button>
+      <button data-number>8</button>
+      <button data-number>9</button>
+      <button data-operation>-</button>
+      <button data-number>.</button>
+      <button data-number>0</button>
+      <button data-equals class="span-two">=</button>
+    </div>
   </body>
 </html>

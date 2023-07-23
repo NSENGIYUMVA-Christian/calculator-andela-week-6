@@ -1,84 +1,59 @@
-*{
-    padding:0;
-    margin:0;
+*, *::before, *::after {
     box-sizing: border-box;
-}
-
-body{
-    font-size: 2em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    height:100vh;
-    width:100vw;
-    background-color: aliceblue;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background: #333;
+  }
+  
+  .calculator-grid {
+    display: grid;
     justify-content: center;
-    gap:5px
-}
-
-main{
-    border: 5px solid red;
-    width:500px;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  }
+  
+  .calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+  }
+  
+  .calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .span-two {
+    grid-column: span 2;
+  }
+  
+  .output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
     display: flex;
-    justify-content: center;
-}
-/* display box */
-.display-box{
-    border:1px solid green;
-    margin: 5px 0;
-    max-height:100px;
-}
-.display-box-row1,.display-box-row2{
-    border:1px solid red;
-    height:50px
-}
-/* numbers and operators buttons */
-.numbers-container{
-    display:flex;
+    align-items: flex-end;
+    justify-content: space-around;
     flex-direction: column;
-    gap:5px
-
-}
-.valClick{
-    width:50px;
-    height:50px;
-    border-radius: 50%;
-    border:none;
-    background-color: rgba(0, 128, 0, 0.462);
-}
-
-.valClick:hover{
-    background-color: rgba(0, 128, 0, 0.726);
-    transform: scale(1.1);
-    transition: 0.2s ease-in-out;
-}
-
-
-/* clear and delete */
-.clear-dlt-container{
-    display:flex;
-    justify-content: space-between;
-}
-.clear-btn,.dlt-btn{
-   width:107px;
-   height:50px;
-   margin-bottom: 5px;
-   border:none ;
-   border-radius: 10px;
-}
-.clear-btn:hover,.dlt-btn:hover{
-    transform: skewX(5deg);
-    transition: 0.2s ease-in-out;
-}
-.clear-btn{
-    background-color: rgba(243, 7, 7, 0.443);
-
-}
-.dlt-btn{
-    background-color:rgba(128, 0, 128, 0.576);
-}
-
-
-
-
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+  }
+  
+  .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+  }
