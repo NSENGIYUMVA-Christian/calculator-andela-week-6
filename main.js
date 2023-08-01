@@ -7,6 +7,7 @@ let placedOperator;
 let equalOperator = document.querySelector(".equalOperator");
 let isOperatorClicked = false;
 let clearBtn = document.querySelector(".clear-btn");
+let result;
 
 function add(firstNumber, secondNumber) {
   return firstNumber + secondNumber;
@@ -61,7 +62,7 @@ operatorsButtons.forEach((operator) => {
 equalOperator.addEventListener("click", function () {
   firstNumber = firstNumber.reduce((acc, num) => acc * 10 + num, 0);
   secondNumber = secondNumber.reduce((acc, num) => acc * 10 + num, 0);
-  let result = operate(placedOperator, firstNumber, secondNumber);
+  result = operate(placedOperator, firstNumber, secondNumber);
   displayBox.textContent = result;
 });
 
