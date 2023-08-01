@@ -6,7 +6,8 @@ let displayBox = document.querySelector(".display-box");
 let placedOperator;
 let equalOperator = document.querySelector(".equalOperator");
 let isOperatorClicked = false;
-
+let clearBtn = document.querySelector(".clear-btn");
+console.log(clearBtn);
 // functions for add, sub, mult and div
 function add(firstNumber, secondNumber) {
   return firstNumber + secondNumber;
@@ -75,4 +76,12 @@ equalOperator.addEventListener("click", function () {
   secondNumber = Number(secondNumber.join(""));
   let result = operate(placedOperator, firstNumber, secondNumber);
   displayBox.textContent = result;
+});
+
+// clear functionality
+clearBtn.addEventListener("click", function () {
+  firstNumber = [];
+  secondNumber = [];
+  displayBox.textContent = "";
+  isOperatorClicked = false;
 });
